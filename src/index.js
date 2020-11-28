@@ -5,10 +5,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Check if Material UI works with React.StrictMode
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <CssBaseline />
     <App />
-  </React.StrictMode>,
+  </>,
   document.getElementById('root')
 );
 
