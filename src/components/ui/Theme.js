@@ -17,8 +17,6 @@ export default createMuiTheme({
     },
   },
   typography: {
-    // htmlFontSize: 10,
-    // fontSize: 10,
     tab: {
       fontFamily: 'Raleway',
       textTransform: 'none',
@@ -30,6 +28,13 @@ export default createMuiTheme({
       fontSize: '1rem ',
       textTransform: 'none',
       color: '#fff',
+    },
+    h2: {
+      fontFamily: 'Raleway',
+      fontWeight: 700,
+      fontSize: '2.5rem',
+      color: `${arcBlue}`,
+      lineHeight: 1.5
     },
   },
 });
