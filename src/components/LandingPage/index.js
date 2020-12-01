@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 
 import Hero from './HeroBlock';
 import Services from './ServicesBlock';
+import Revolution from './RevolutionBlock'
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -23,6 +24,7 @@ export default function () {
     <Grid container direction="column" className={classes.mainContainer}>
       <Hero />
       <Services />
+      <Revolution />
     </Grid>
   );
 }
