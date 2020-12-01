@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Hero from './HeroBlock';
 import Services from './ServicesBlock';
 import Revolution from './RevolutionBlock'
+import Information from './InformationBlock'
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -25,6 +26,7 @@ export default function () {
       <Hero />
       <Services />
       <Revolution />
+      <Information />
     </Grid>
   );
 }
