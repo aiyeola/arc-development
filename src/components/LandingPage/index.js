@@ -4,8 +4,9 @@ import Grid from '@material-ui/core/Grid';
 
 import Hero from './HeroBlock';
 import Services from './ServicesBlock';
-import Revolution from './RevolutionBlock'
-import Information from './InformationBlock'
+import Revolution from './RevolutionBlock';
+import Information from './InformationBlock';
+import CallToAction from '../ui/CallToAction';
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -19,14 +20,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function () {
+export default function ({ setValue, setSelectedIndex }) {
   const classes = useStyles();
   return (
     <Grid container direction="column" className={classes.mainContainer}>
-      <Hero />
-      <Services />
-      <Revolution />
-      <Information />
+      <Hero setValue={setValue} />
+      <Services setValue={setValue} setSelectedIndex={setSelectedIndex} />
+      <Revolution setValue={setValue} />
+      <Information setValue={setValue} />
+      <CallToAction setValue={setValue} />
     </Grid>
   );
 }

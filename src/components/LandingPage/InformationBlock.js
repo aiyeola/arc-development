@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Link } from 'react-router-dom';
 
 import ButtonArrow from '../ui/ButtonArrow';
 import infoBackground from '../../assets/infoBackground.svg';
@@ -14,8 +15,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    height: '100%',
+    height: '80em',
     width: '100%',
+    [theme.breakpoints.down('xs')]: {
+      margin: 0,
+    },
   },
   learnButton: {
     ...theme.typography.learnButton,
@@ -26,13 +30,9 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '2em',
     },
   },
-  gridContainer: {
-    padding: 0,
-    width: 500,
-  },
 }));
 
-const InformationBlock = () => {
+const InformationBlock = ({ setValue }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -43,34 +43,39 @@ const InformationBlock = () => {
       container
       direction="row"
       alignItems="center"
-      style={{ height: '80em' }}
+      className={classes.infoBackground}
     >
       <Grid
         item
         container
         style={{
-          position: 'absolute',
           textAlign: matchesXS ? 'center' : 'inherit',
           width: matchesXS ? '100vw' : 'inherit',
         }}
         direction={matchesXS ? 'column' : 'row'}
-        spacing={matchesXS ? 10 : 0}
       >
         <Grid
           item
           sm
           style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}
         >
-          <Grid container direction="column">
+          <Grid
+            container
+            style={{ marginBotton: matchesXS ? '10em' : 0 }}
+            direction="column"
+          >
             <Typography variant="h2" style={{ color: 'white' }}>
               About Us
             </Typography>
             <Typography variant="subtitle2">Let's get personal.</Typography>
             <Grid item>
               <Button
+                component={Link}
+                to="/about"
                 variant="outlined"
                 style={{ color: 'white', borderColor: 'white' }}
                 className={classes.learnButton}
+                onClick={() => setValue(3)}
               >
                 <span style={{ marginRight: 10 }}>Learn More</span>
                 <ButtonArrow
@@ -103,9 +108,12 @@ const InformationBlock = () => {
             </Typography>
             <Grid item>
               <Button
+                component={Link}
+                to="/contact"
                 variant="outlined"
                 style={{ color: 'white', borderColor: 'white' }}
                 className={classes.learnButton}
+                onClick={() => setValue(4)}
               >
                 <span style={{ marginRight: 10 }}>Learn More</span>
                 <ButtonArrow
@@ -118,7 +126,6 @@ const InformationBlock = () => {
           </Grid>
         </Grid>
       </Grid>
-      <div className={classes.infoBackground} />
     </Grid>
   );
 };

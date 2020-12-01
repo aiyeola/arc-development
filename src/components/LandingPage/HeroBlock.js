@@ -4,6 +4,7 @@ import { makeStyles, useTheme } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 import ButtonArrow from '../ui/ButtonArrow';
 import animationData from '../../animations/landinganimation/data';
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HeroBlock = () => {
+const HeroBlock = ({ setValue }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -71,12 +72,24 @@ const HeroBlock = () => {
           </Typography>
           <Grid container justify="center" className={classes.buttonContainer}>
             <Grid item>
-              <Button variant="contained" className={classes.estimateButton}>
+              <Button
+                component={Link}
+                to="/estimate"
+                variant="contained"
+                className={classes.estimateButton}
+                onClick={() => setValue(5)}
+              >
                 Free Estimate
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="outlined" className={classes.learnButtonHero}>
+              <Button
+                component={Link}
+                to="/revolution"
+                variant="outlined"
+                className={classes.learnButtonHero}
+                onClick={() => setValue(2)}
+              >
                 <span style={{ marginRight: 10 }}>Learn More</span>
                 <ButtonArrow
                   width={15}
