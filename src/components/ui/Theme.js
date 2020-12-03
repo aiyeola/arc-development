@@ -1,4 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import 'fontsource-pacifico';
+import 'fontsource-raleway';
+import 'fontsource-roboto';
 
 const arcBlue = '#0B72B9';
 const arcOrange = '#FFBA60';
@@ -23,6 +26,7 @@ export default createMuiTheme({
       textTransform: 'none',
       fontWeight: 700,
       fontSize: '1rem', // 14px
+      color: 'inherit',
     },
     estimate: {
       fontFamily: 'Pacifico',
@@ -47,6 +51,11 @@ export default createMuiTheme({
       fontSize: '1.7rem',
       color: arcBlue,
       fontWeight: 700,
+    },
+    body1: {
+      fontSize: '1.25rem',
+      color: arcGrey,
+      fontWeight: 300,
     },
     subtitle1: {
       fontSize: '1.25rem',
