@@ -9,12 +9,12 @@ import LandingPage from './LandingPage';
 import Services from '../components/Services';
 import CustomSoftware from '../components/Services/CustomSoftware';
 import MobileApps from '../components/Services/MobileApps';
+import Websites from '../components/Services/Websites';
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [value, setValue] = useState(0);
 
-  // console.log('theme: ', theme);
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
@@ -69,7 +69,17 @@ function App() {
               />
             )}
           />
-          <Route exact path="/websites" component={() => <div>Websites</div>} />
+          <Route
+            exact
+            path="/websites"
+            component={(props) => (
+              <Websites
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
           <Route
             exact
             path="/revolution"
