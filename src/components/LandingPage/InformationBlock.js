@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const InformationBlock = ({ setValue }) => {
+function InformationBlock({ setValue }) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -128,6 +128,6 @@ const InformationBlock = ({ setValue }) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default InformationBlock;

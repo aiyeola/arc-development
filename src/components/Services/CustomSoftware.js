@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomSoftware = ({ setValue, setSelectedIndex }) => {
+function CustomSoftware({ setValue, setSelectedIndex }) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
@@ -462,6 +462,6 @@ const CustomSoftware = ({ setValue, setSelectedIndex }) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default CustomSoftware;

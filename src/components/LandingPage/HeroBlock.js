@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HeroBlock = ({ setValue }) => {
+function HeroBlock({ setValue }) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -106,6 +106,6 @@ const HeroBlock = ({ setValue }) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default HeroBlock;

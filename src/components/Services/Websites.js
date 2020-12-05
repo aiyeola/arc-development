@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Websites = ({ setValue, setSelectedIndex }) => {
+function Websites({ setValue, setSelectedIndex }) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
@@ -283,6 +283,6 @@ const Websites = ({ setValue, setSelectedIndex }) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default Websites;

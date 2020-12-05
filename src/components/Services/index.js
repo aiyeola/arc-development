@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Services = ({ setValue, setSelectedIndex }) => {
+function Services({ setValue, setSelectedIndex }) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -232,6 +232,6 @@ const Services = ({ setValue, setSelectedIndex }) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default Services;

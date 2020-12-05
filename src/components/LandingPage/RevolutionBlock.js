@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const RevolutionBlock = ({ setValue }) => {
+function RevolutionBlock({ setValue }) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -94,6 +94,6 @@ const RevolutionBlock = ({ setValue }) => {
       </Grid>
     </>
   );
-};
+}
 
 export default RevolutionBlock;

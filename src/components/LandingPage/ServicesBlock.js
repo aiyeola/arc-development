@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ServicesBlock = ({ setValue, setSelectedIndex }) => {
+function ServicesBlock({ setValue, setSelectedIndex }) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -206,6 +206,6 @@ const ServicesBlock = ({ setValue, setSelectedIndex }) => {
       </Grid>
     </>
   );
-};
+}
 
 export default ServicesBlock;

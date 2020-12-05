@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MobileApps = ({ setValue, setSelectedIndex }) => {
+function MobileApps({ setValue, setSelectedIndex }) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
@@ -252,6 +252,6 @@ const MobileApps = ({ setValue, setSelectedIndex }) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default MobileApps;
