@@ -1,7 +1,7 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const nodemailer = require('nodemailer');
-const cors = require('cors');
+const nodemailer = require("nodemailer");
+const cors = require("cors");
 
 // https://app.netlify.com/sites/relaxed-chandrasekhar-47c792
 // https://relaxed-chandrasekhar-47c792.netlify.app
@@ -13,13 +13,19 @@ const cors = require('cors');
 //   },
 // });
 
-exports.handler = async (event, context) => {
-  console.log('event: ', event);
+exports.handler = function (event, context) {
+  const { name, email, phone, message } = event.queryStringParameters;
+  console.log("event.queryStringParameters: ", event.queryStringParameters);
+
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: 'Hello World' }),
+    body: JSON.stringify({
+      name,
+      email,
+      phone,
+      message,
+    }),
   };
-  //     const { name, email, phone, message } = event.query;
   //   cors((request, response) => {
   //     const { name, email, phone, message } = request.query;
 
